@@ -1,29 +1,43 @@
 <template>
-  <input
-    :value="modelValue"
-    @input="updateInput"
-    @blur="validationInput"
-    class="custom-input"
-    type="text"
-    autocomplete="off"
-  />
+  <div class="custom-input-wrap">
+    <input
+      :value="modelValue"
+      @input="updateInput"
+      @blur="validationInput"
+      class="custom-input"
+      :class="{ 'custom-input--error': isError }"
+      type="text"
+      autocomplete="off"
+    />
+    <span class="custom-input-wrap__error" v-show="isError"
+      >Поле является обязательным</span
+    >
+  </div>
 </template>
 
 <script>
 export default {
   name: "custom-input",
+  data() {
+    return {
+      isError: false,
+    };
+  },
   props: {
     modelValue: [String, Number],
   },
   methods: {
     updateInput(event) {
       this.$emit("update:modelValue", event.target.value);
+      this.validationInput(event);
     },
     validationInput(event) {
-      if (!event.target._value) {
-        event.target.classList.add("custom-input--error");
+      console.log(event.target.value);
+
+      if (!event.target.value) {
+        this.isError = true;
       } else {
-        event.target.classList.remove("custom-input--error");
+        this.isError = false;
       }
     },
   },
@@ -31,6 +45,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.custom-input-wrap {
+  position: relative;
+
+  &__error {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transform: translateY(100%);
+
+    font-size: 8px;
+    line-height: 10px;
+    letter-spacing: -0.02em;
+
+    color: var(--warning-color);
+  }
+}
 .custom-input {
   width: 100%;
   padding: {

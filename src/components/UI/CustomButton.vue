@@ -19,10 +19,11 @@ export default {
     left: 10px;
   }
 
+  font-family: "Inter";
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: #ffffff;
+  color: #fff;
 
   background-color: var(--success-color);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
