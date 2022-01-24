@@ -1,0 +1,28 @@
+:root {
+  --main-color: #3f3f3f;
+  --background-color: #fffefb;
+  --background-color_08: rgba(#fffefb, 0.8);
+  --warning-color: #ff8484;
+
+  --success-color: #7bae73;
+  --success-l-color: #97bf91;
+  --success-d-color: #5d9454;
+
+  --grey-color: #b4b4b4;
+  --grey-l-color: #eeeeee;
+  --dark-color: #49485e;
+
+  --transition-1: all 0.1s ease-in;
+  --transition-2: all 0.2s ease-in;
+
+  --rhythm-1: 8px;
+  --rhythm-2: 16px;
+  --rhythm-3: 24px;
+
+  --safe-padding: 32px;
+  @include _767 {
+    --safe-padding: 16px;
+  }
+
+  --max-width-container: calc(1376px + (var(--safe-padding) * 2));
+}
