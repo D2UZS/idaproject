@@ -12,8 +12,8 @@
           v-focus
           v-model="product.title"
           class="product-add-form__input"
-          placeholder="Введите наименование товара"
           id="input-product-title"
+          placeholder="Введите наименование товара"
         />
       </div>
       <div class="product-add-form__line">

@@ -8,6 +8,8 @@
       :class="{ 'custom-input--error': isError }"
       type="text"
       autocomplete="off"
+      :placeholder="placeholder"
+      :id="id"
     />
     <span class="custom-input-wrap__error" v-show="isError"
       >Поле является обязательным</span
@@ -25,6 +27,8 @@ export default {
   },
   props: {
     modelValue: [String, Number],
+    placeholder: [String, Number],
+    id: [String, Number],
   },
   methods: {
     updateInput(event) {
@@ -32,8 +36,6 @@ export default {
       this.validationInput(event);
     },
     validationInput(event) {
-      console.log(event.target.value);
-
       if (!event.target.value) {
         this.isError = true;
       } else {

@@ -1,7 +1,7 @@
 :root {
   --main-color: #3f3f3f;
   --background-color: #fffefb;
-  --background-color_08: rgba(#fffefb, 0.8);
+  --background-color_08: #{rgba(#fffefb, 0.8)};
   --warning-color: #ff8484;
 
   --success-color: #7bae73;
