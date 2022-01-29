@@ -1,9 +1,6 @@
 <template>
   <div class="product-item">
-    <div
-      class="product-item__content"
-      @click="$router.push(`/product/${product.id}`)"
-    >
+    <router-link :to="`/product/${product.id}`" class="product-item__content">
       <div class="product-item__content-pic">
         <img v-if="product.src" :src="product.src" />
         <img v-else src="@/assets/images/product-img.jpg" />
@@ -15,7 +12,7 @@
         </div>
         <div class="product-item__price">{{ product.price }} руб.</div>
       </div>
-    </div>
+    </router-link>
     <btn-remove
       class="product-item__remove"
       @click="$emit('remove', product)"
