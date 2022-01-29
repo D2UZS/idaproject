@@ -77,7 +77,7 @@ export default {
 
     background-color: var(--background-color);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 4px;
     cursor: pointer;
     border: none;
     -webkit-appearance: none;

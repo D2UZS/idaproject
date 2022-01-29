@@ -13,7 +13,7 @@
         <div class="product-item__description">
           <p>{{ product.description }}</p>
         </div>
-        <div class="product-item__price">{{ product.price }} .руб</div>
+        <div class="product-item__price">{{ product.price }} руб.</div>
       </div>
     </div>
     <btn-remove
